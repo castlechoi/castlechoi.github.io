@@ -2,8 +2,8 @@ title: Castlechoi's Blog
 description: Castlechoi's AI Tech Blog
 
 url: https://castlechoi.github.io
+baseurl : "_site"
 
-remote-theme : jsut-the-docs
 
 
 aux_links:
