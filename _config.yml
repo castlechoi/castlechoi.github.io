@@ -3,6 +3,8 @@ description: Castlechoi's AI Tech Blog
 
 url: https://castlechoi.github.io
 
+remote_theme : just-the-docs/just-the-docs
+
 
 aux_links:
   Template Repository: https://github.com/castlechoi
