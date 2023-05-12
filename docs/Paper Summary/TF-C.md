@@ -55,7 +55,7 @@ CV와 NLP와는 반대로, 시계열 데이터는 데이터가 복잡함이 pre-
     - 다양한 Augmentation을 하기 위해서 multiple invariance를 이용하는 augmentation bank를 제시
     - Frequency-based augmentation도 제시
     
-   
+    ![cap.jpg](./TFC/cap.jpg)
     
     ## Problem Formulation
     
@@ -90,11 +90,11 @@ CV와 NLP와는 반대로, 시계열 데이터는 데이터가 복잡함이 pre-
         $$
         
     
-    
+    ![ddd.JPG](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/ddd.jpg)
     
     → 아래 모델 그림 참고
     
- 
+    ![model.JPG](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/model.jpg)
     
 
 ## Approach
@@ -117,7 +117,7 @@ CV와 NLP와는 반대로, 시계열 데이터는 데이터가 복잡함이 pre-
     
     NT-Xent ( the normalized temperature-scaled cross entropy loss )
     
- 
+    ![lss.JPG](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/lss.jpg)
     
     sim ( u , v ) : 코사인 유사도
     
@@ -131,7 +131,7 @@ CV와 NLP와는 반대로, 시계열 데이터는 데이터가 복잡함이 pre-
         1. Removing Frequency : 푸리에 변환을 해서 나온 frequency component의 진폭을 0으로만들면 frequency component를 제거한 것과 같은 효과
         2. Adding Frequency : 미리 정의한 α = 0.5 보다 진폭이 작은 것을 선택해서 진폭을 0.5로 설정)
 
-
+![loss.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/loss.png)
 
 T변수는 실제로 성능에 큰 영향이 없기 때문에 실험동안 동일하게 설정해서 사용했다고 함
 
@@ -139,7 +139,7 @@ T변수는 실제로 성능에 큰 영향이 없기 때문에 실험동안 동�
 
   Projector Rt, Rf를 통해서 각 embedding안의 vector를 Time-Frequency space에 joint함
 
-
+![cocloss.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/cocloss.png)
 
 Loss에서 sigma안의 항 : ( 같은 도메인에서 나온 z끼리는 distance 구하지 않는다 )
 
@@ -168,7 +168,7 @@ $$
 - Implementation and Technical Details ( 실질적 전체 loss 함수 )
     
     
-
+    ![total.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/total.png)
     
     ⋋ : constrastive와 consistency loss사이의 중요도를 결정
     
@@ -191,18 +191,18 @@ Datasets
 - ECG : 4 classes based on human physiology
 - EMG : muscular diseases
     
-   
+    ![datasetse.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/datasetse.png)
     
 
 Baselines
 
-
+![baseline.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/baseline.png)
 
  → pre-training model : SleepEEG에 대한 fine-tuneing 결과
 
 → TNC, CPC는 성능이 좋지 않아서 one-to-one setting만 실시
 
-
+![model.JPG](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/model.jpg)
 
 Encoder G : 3-layer 1-D ResNets as backbone ( datasets이 long time series를 가지고 있어서 transformer보다 좋은 선택이라고 함 )
 
@@ -218,7 +218,7 @@ loss function ⋋ = 0.5, T = 0.2,  σ  = 1
     - One pre-training dataset
     - One target dataset
 
-
+![exexexe.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/exexexe.png)
 
   
 
@@ -238,7 +238,7 @@ Scenario 4 : signal heart → signal muscle
     - One Pre-Training dataset
     - Many target datasets
     
-    
+    ![dfjslkkfjslfds.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/dfjslkkfjslfds.png)
     
 
 → One-to-Many에서 저자가 생각한 것보다 성능이 잘 나왔다고 함
@@ -247,7 +247,7 @@ Scenario 4 : signal heart → signal muscle
 
 - Additional Downstream Tasks : Clustering and Anomaly Detection
     
-   
+    ![이런이라너이라넝.png](Self-Supervised%20Constrastive%20Pre-Training%20for%20Time%2007692c0bcedc4bf9b3c54fa465db7a34/%25EC%259D%25B4%25EB%259F%25B0%25EC%259D%25B4%25EB%259D%25BC%25EB%2584%2588%25EC%259D%25B4%25EB%259D%25BC%25EB%2584%259D.png)
     
     - Clusting Task
         - TF-C의 CLusting Task에서의 좋은 성능은 pre-training으로 전달된 knowledge보다 distinctive representation을 더 잘 잡아낼 수 있다는 것을 의미
