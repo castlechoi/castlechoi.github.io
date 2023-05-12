@@ -23,7 +23,7 @@ Page : [https://arxiv.org/abs/2106.10466](https://arxiv.org/abs/2106.10466)
 
 - Model architecture
     
-    ![ts2vecs.png](TS2Vec%20Toward%20Universal%20Representation%20of%20Time%20Ser%204fe8bd95e78c44799109ac43aaaa762c/ts2vecs.png)
+    ![ts2vecs.png](TS2Vec/ts2vecs.png)
     
     - Input time series :
         
