@@ -23,7 +23,7 @@ Page : [https://arxiv.org/abs/2106.10466](https://arxiv.org/abs/2106.10466)
 
 - Model architecture
     
-    ![ts2vecs.png](TS2Vec/ts2vecs.png)
+    
     
     - Input time series :
         
