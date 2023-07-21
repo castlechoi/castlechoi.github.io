@@ -2,8 +2,7 @@
 
 ---
 
-### **NATURAL TTS SYNTHESIS BY CONDITIONING WAVENET ON MEL SPECTROGRAM
-PREDICTIONS**
+### **NATURAL TTS SYNTHESIS BY CONDITIONING WAVENET ON MEL SPECTROGRAM PREDICTIONS**
 
 ## Index
 
@@ -66,7 +65,7 @@ Tacotron2 api :  [https://pytorch.org/audio/stable/generated/torchaudio.models.T
 Seq2Seq architecture
 
 1. Encoder ( Text → Mel-frequency spectrogram )
-2. Decoder ( Mel-Freqeuncy spectrogram → Waveform
+2. Decoder ( Mel-Freqeuncy spectrogram → Waveform )
 
 위 구조의 장점
 
@@ -90,7 +89,7 @@ Mel-Frequency Spectrogram vs Linear Spectrogram
 5. pre-net ( Fully-Connected Layer )
 6. post-net ( Convolution )
 7. WaveNet Vocoder
-8. Stop token ( Probability
+8. Stop token ( Probability )
     - Dynamic하게 생성의 중단을 결정
 
 ## Experiments
